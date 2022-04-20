@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Banner from '../components/Banner'
 import Header from '../components/Header'
 import { Movie } from '../typings'
 import requests from '../utils/requests'
@@ -35,6 +36,7 @@ const Home = ({
         <Header />
         <main>
           {/* Banner */}
+          <Banner netflixOriginals={netflixOriginals}/>
           <section>
 
           </section>
