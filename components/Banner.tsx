@@ -1,5 +1,7 @@
 import Image from 'next/image'
 import React, { useEffect, useState } from 'react'
+import { FaPlay } from 'react-icons/fa';
+import { HiInformationCircle } from 'react-icons/hi';
 import { baseUrl } from '../constants/movie'
 import { Movie } from '../typings'
 
@@ -28,12 +30,20 @@ export default function Banner({ netflixOriginals }: Props) {
         />
       </div>
 
-      <h1 className="z-20 text-2xl font-bold md:text-4xl lg:text-7xl">
+      <h1 className="z-20 ml-3 text-2xl font-bold md:ml-7 md:text-4xl lg:text-7xl">
         {movie?.title || movie?.name || movie?.original_name}
       </h1>
-      <p className="max-w-xs md:max-w-lg md:text-lg lg:max-w-2xl">
+      <p className="max-w-xs ml-3 md:max-w-lg md:ml-7 md:text-lg lg:max-w-2xl">
         {movie?.overview}
       </p>
+
+      <div className='flex space-x-3 ml-3 md:ml-7'>
+        <button className='bannerButton bg-white text-black'>
+          <FaPlay className='text-black'/> Play
+        </button>
+        <button className='bannerButton bg-[gray]/70'>
+          <HiInformationCircle className='h-5 w-5 md:h-8 md:w-8'/>More Info</button>
+      </div>
     </div>
   )
 }
